@@ -13,6 +13,7 @@ export class StockItem {
 public stock !:Stock;
   public stockClasses!: {}; 
    public stockStyles  !:{} 
+   public bgstyles!:{};
 constructor() { }
   ngOnInit() {
     
@@ -23,6 +24,9 @@ constructor() { }
       'color': this.stock.isPositiveChange() ? 'green' : 'red',
       'font-size': largeChange ? '2em' : '1em'
     };
+    this.bgstyles = {
+      'background-color':this.stock.isPositiveChange()?'yellow':'pink';
+    }
     // this.stockClasses = {
     //   // for the prices being 85, 80
     //   'positive': this.stock.isPositiveChange(),  // true
