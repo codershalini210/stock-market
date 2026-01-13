@@ -17,7 +17,7 @@ public stock !:Stock;
 constructor() { }
   ngOnInit() {
     
-    this.stock = new Stock("Test Stock Company","TSC",80,82)
+    this.stock = new Stock("Test Stock Company","TSC",85,82)
       let diff = (this.stock.price / this.stock.previousPrice) - 1;
     let largeChange = Math.abs(diff) > 0.03;
      this.stockStyles  = {
