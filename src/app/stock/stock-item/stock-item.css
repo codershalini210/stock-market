@@ -1,0 +1,16 @@
+.stock-container {
+  border: 1px solid black;
+  border-radius: 5px;
+  
+  padding: 10px;
+}
+.stock-container>div
+{
+    display:flex;
+}
+.positive {
+  color: green;
+}
+.negative {
+  color: red;
+}
