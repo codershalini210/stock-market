@@ -25,7 +25,7 @@ constructor() { }
       'font-size': largeChange ? '2em' : '1em'
     };
     this.bgstyles = {
-      'background-color':this.stock.isPositiveChange()?'yellow':'pink';
+      'background-color':this.stock.isPositiveChange()?'yellow':'pink'
     }
     // this.stockClasses = {
     //   // for the prices being 85, 80
