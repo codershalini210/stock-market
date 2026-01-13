@@ -1,3 +1,16 @@
 <h1 class="heading">Welcome to Stock Market Project</h1>
+<div class="container">
 
+<!-- <app-product-mini name="iphone " [price]="522"
+[inStock]="true"></app-product-mini>
+<app-product-mini name="laptop " [price]="852"
+[inStock]="true"></app-product-mini>
+<app-product-mini name="AC " [price]="655"
+[inStock]="false"></app-product-mini> -->
+<app-product-mini *ngFor="let p of items"
+[name]="p.name"
+[inStock]="p.inStock"
+[price]="p.price"
+></app-product-mini>
+</div>
 <app-stock-item></app-stock-item>

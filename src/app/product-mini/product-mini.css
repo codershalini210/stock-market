@@ -1,0 +1,22 @@
+.product
+{
+    height:150px;
+    width:150px;
+    border:1px solid blue;
+    
+text-align:center;
+}
+button
+{
+    background-color: blue;
+    color:white;
+    height:40px;
+    width:120px;
+    text-align:center;
+}
+.out
+{
+    color:red;
+    font-size:25px;
+    font-weight:bold;
+}

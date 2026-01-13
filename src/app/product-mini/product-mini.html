@@ -1,0 +1,6 @@
+<div class="product">
+    <h2>{{name}}</h2>
+    <p>${{price}}</p>
+    <button *ngIf="inStock">Add to Cart</button>
+    <p *ngIf="!inStock" class="out">Out of Stock</p>
+</div>
