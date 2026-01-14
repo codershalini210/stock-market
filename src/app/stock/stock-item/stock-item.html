@@ -1,11 +1,11 @@
-<div class="stock-container" *ngFor="let s of stock; index as i">
-     <div class='name'><h3>{{s.name}}</h3> 
-        <h4>({{s.code}})</h4></div>
+<div class="stock-container">
+     <div class='name'><h3>{{stock.name}}</h3> 
+        <h4>({{stock.code}})</h4></div>
   <!-- <div [ngClass]='stockClasses'
   >$ {{stock.price}}</div> -->
-  <div [ngStyle]="stockStyles">${{s.price}}</div>
-  <button *ngIf='!s.favorite'
-  (click)='toggleFavorite($event,i)'>Add to Favorite</button>
+  <div >${{stock.price}}</div>
+  <button *ngIf='!stock.favorite'
+  (click)='toggleFavorite($event)'>Add to Favorite</button>
   <!-- <button
     (click)='toggleFavorite($event)'
     [disabled]='stock.favorite'

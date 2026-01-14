@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 // import { NgClass } from "../../../../node_modules/@angular/common/types/_common_module-chunk";
 import { CommonModule } from '@angular/common';
 import { Stock } from '../../model/stock';
@@ -9,25 +9,21 @@ import { Stock } from '../../model/stock';
   styleUrl: './stock-item.css',
 })
 export class StockItem {
-
-public stock !:Array<Stock>;
-  public stockClasses!: {}; 
-   public stockStyles  !:{} 
-   public bgstyles!:{};
+@Input() public stock!:Stock;
+// public stock !:Array<Stock>;
+//   public stockClasses!: {}; 
+//    public stockStyles  !:{} 
+//    public bgstyles!:{};
 constructor() {   
-    this.stock = [
-      new Stock('Test Stock Company', 'TSC', 85, 80),
-      new Stock('Second Stock Company', 'SSC', 10, 20),
-      new Stock('Last Stock Company', 'LSC', 876, 765)
-    ];
+    
   }
   ngOnInit() {
       
     
   }
-   toggleFavorite(event :any,i: number) {
+   toggleFavorite(event :any) {
     console.log("event is -"+event)
     // this.favorite = !this.favorite;
-    this.stock[i].favorite = !this.stock[i].favorite
+    this.stock.favorite = !this.stock.favorite
   }
 }
