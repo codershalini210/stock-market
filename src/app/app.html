@@ -13,4 +13,5 @@
 [price]="p.price"
 ></app-product-mini>
 </div>
-<app-stock-item></app-stock-item>
+<app-stock-item [stock]="stockObj"
+(toggleFavoriteOut)='toggleFavorite($event)'></app-stock-item>

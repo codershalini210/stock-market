@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,EventEmitter,Output } from '@angular/core';
 // import { NgClass } from "../../../../node_modules/@angular/common/types/_common_module-chunk";
 import { CommonModule } from '@angular/common';
 import { Stock } from '../../model/stock';
@@ -10,20 +10,19 @@ import { Stock } from '../../model/stock';
 })
 export class StockItem {
 @Input() public stock!:Stock;
+  @Output() private toggleFavoriteOut: EventEmitter<Stock>;
 // public stock !:Array<Stock>;
 //   public stockClasses!: {}; 
 //    public stockStyles  !:{} 
 //    public bgstyles!:{};
 constructor() {   
-    
+     this.toggleFavoriteOut = new EventEmitter<Stock>();
   }
   ngOnInit() {
       
     
   }
    toggleFavorite(event :any) {
-    console.log("event is -"+event)
-    // this.favorite = !this.favorite;
-    this.stock.favorite = !this.stock.favorite
+    this.toggleFavoriteOut.emit(this.stock)
   }
 }

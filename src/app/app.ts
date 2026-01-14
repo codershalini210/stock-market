@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { StockItem } from './stock/stock-item/stock-item';
 import { ProductMini } from './product-mini/product-mini';
 import { NgFor } from '@angular/common';
+import { Stock } from './model/stock';
 // import { NgForOf } from "../../node_modules/@angular/common/types/_common_module-chunk";
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { NgFor } from '@angular/common';
   styleUrl: './app.css'
 })
 export class App {
+    public stockObj!: Stock;
   items=[
     {name:'Iphone',price:652,inStock:true},
    {name:'Laptop',price:852,inStock:true},
@@ -24,4 +26,12 @@ export class App {
    {name:'Pen drive',price:20,inStock:true},
   {name:'Led',price:50,inStock:false},]
   protected readonly title = signal('stock-market');
+constructor()
+{
+   this.stockObj = new Stock('APP Stock Company', 'TSC', 85, 80);
+}
+toggleFavorite(stock : Stock)
+{
+  this.stockObj.favorite=!this.stockObj.favorite
+}
 }
