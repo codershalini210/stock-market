@@ -10,35 +10,24 @@ import { Stock } from '../../model/stock';
 })
 export class StockItem {
 
-public stock !:Stock;
+public stock !:Array<Stock>;
   public stockClasses!: {}; 
    public stockStyles  !:{} 
    public bgstyles!:{};
-constructor() { }
-  ngOnInit() {
-    
-    this.stock = new Stock("Test Stock Company","TSC",85,82)
-      let diff = (this.stock.price / this.stock.previousPrice) - 1;
-    let largeChange = Math.abs(diff) > 0.03;
-     this.stockStyles  = {
-      'color': this.stock.isPositiveChange() ? 'green' : 'red',
-      'font-size': largeChange ? '2em' : '1em'
-    };
-    this.bgstyles = {
-      'background-color':this.stock.isPositiveChange()?'yellow':'pink'
-    }
-    // this.stockClasses = {
-    //   // for the prices being 85, 80
-    //   'positive': this.stock.isPositiveChange(),  // true
-    //   'negative': !this.stock.isPositiveChange(),   // false
-    //   'large-change': largeChange,    // true
-    //   'small-change': !largeChange    // false
-    // };
-    // console.log(this.stockClasses)
+constructor() {   
+    this.stock = [
+      new Stock('Test Stock Company', 'TSC', 85, 80),
+      new Stock('Second Stock Company', 'SSC', 10, 20),
+      new Stock('Last Stock Company', 'LSC', 876, 765)
+    ];
   }
-   toggleFavorite(event :any) {
+  ngOnInit() {
+      
+    
+  }
+   toggleFavorite(event :any,i: number) {
     console.log("event is -"+event)
     // this.favorite = !this.favorite;
-    this.stock.favorite = !this.stock.favorite
+    this.stock[i].favorite = !this.stock[i].favorite
   }
 }
